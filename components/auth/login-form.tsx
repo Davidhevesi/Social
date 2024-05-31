@@ -23,10 +23,6 @@ export const LoginForm = () => {
     defaultValues: { email: "", password: "" },
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const values = data as z.infer<typeof LoginSchema>;
-    console.log(values);
-  };
   return (
     <CardWrapper
       headerLabel="Welcome Back"
@@ -35,7 +31,7 @@ export const LoginForm = () => {
       showSocial
     >
       <Form {...form}>
-        <form className="space-y-6" onSubmit={form.handleSubmit(onSubmit)}>
+        <form className="space-y-6">
           <div className="space-y-4">
             <FormField
               name="email"
